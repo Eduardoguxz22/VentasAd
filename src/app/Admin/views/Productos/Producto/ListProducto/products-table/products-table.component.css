@@ -1,0 +1,33 @@
+.categoryId {
+  max-width: min-content;
+}
+.category {
+  max-width: min-content;
+}
+.productImage {
+  max-width: min-content;
+}
+.IGVTypeId {
+  max-width: min-content;
+}
+.unitId {
+  max-width: min-content;
+}
+.price {
+  max-width: min-content;
+}
+.price_C\/IGV {
+  max-width: min-content;
+}
+.price_S\/IGV {
+  max-width: min-content;
+}
+.maxPrice_C\/IGV {
+  max-width: min-content;
+}
+.maxPrice_S\/IGV {
+  max-width: min-content;
+}
+.offerPrice_C\/IGV {
+  max-width: min-content;
+}

@@ -1,0 +1,81 @@
+<table mat-table [dataSource]="data">
+  <ng-container matColumnDef="categoryId">
+    <th mat-header-cell *matHeaderCellDef>Id Categoria</th>
+    <td mat-cell *matCellDef="let products" class="categoryId">
+      {{ products.categoryId }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef>Categoría Producto</th>
+    <td mat-cell *matCellDef="let products" class="category">
+      {{ products.category }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="productImage">
+    <th mat-header-cell *matHeaderCellDef>Id Tipo Afec. IGV</th>
+    <td mat-cell *matCellDef="let products" class="productImage">
+      {{ products.productImage }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="IGVTypeId">
+    <th mat-header-cell *matHeaderCellDef>Id Unidad Medida</th>
+    <td mat-cell *matCellDef="let products" class="IGVTypeId">
+      {{ products.IGVTypeId }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="unitId">
+    <th mat-header-cell *matHeaderCellDef>Unidad Medida</th>
+    <td mat-cell *matCellDef="let products" class="unitId">
+      {{ products.unitId }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Costo Unit.</th>
+    <td mat-cell *matCellDef="let products" class="price">
+      {{ products.price }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price C/IGV">
+    <th mat-header-cell *matHeaderCellDef>Precio C/IGV</th>
+    <td mat-cell *matCellDef="let products" class="price_C/IGV">
+      {{ products["price C/IGV"] }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price S/IGV">
+    <th mat-header-cell *matHeaderCellDef>Precio S/IGV</th>
+    <td mat-cell *matCellDef="let products" class="price_S/IGV">
+      {{ products["price S/IGV"] }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="maxPrice C/IGV">
+    <th mat-header-cell *matHeaderCellDef>Precio Mayor C/IGV</th>
+    <td mat-cell *matCellDef="let products" class="maxPrice_C/IGV">
+      {{ products["maxPrice C/IGV"] }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="maxPrice S/IGV">
+    <th mat-header-cell *matHeaderCellDef>Precio Mayor S/IGV</th>
+    <td mat-cell *matCellDef="let products" class="maxPrice_S/IGV">
+      {{ products["maxPrice S/IGV"] }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="offerPrice C/IGV">
+    <th mat-header-cell *matHeaderCellDef>Precio Oferta C/IGV</th>
+    <td mat-cell *matCellDef="let products" class="offerPrice_C/IGV">
+      {{ products["offerPrice C/IGV"] }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
