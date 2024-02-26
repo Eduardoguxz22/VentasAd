@@ -1,0 +1,91 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    style="
+      background-image: radial-gradient(
+        circle at 24.16% -5.41%,
+        #0e2651 0,
+        #1a4fbd 50%,
+        #0e2651 100%
+      );
+    "
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>
+      <div
+        class="container justify-content-center justify-content-sm-start mt-3 mt-sm-5"
+      >
+        <img
+          class="img-fluid rounded just"
+          src="https://media.discordapp.net/attachments/966375514564616222/1207011154296307772/image.png?ex=65e7523c&is=65d4dd3c&hm=d59895179006f77c985dae83303c79c7ceb376e282bc25ec13492ab8620fed86&=&format=webp&quality=lossless"
+          alt="Imagen de ejemplo"
+          width="95%"
+        />
+      </div>
+    </mat-toolbar>
+
+    <mat-accordion class="mt-md-5 overflow-scroll text-white">
+      <br /><br /><br />
+      <mat-expansion-panel class="custom-expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <div class="col-auto">
+                <p class="dis">PRODUCTOS</p>
+              </div>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list class="custom-mat-list">
+          <a mat-list-item routerLink="productos/list_Producto" >Inventario</a>
+        </mat-list>
+        <mat-list>
+          <a mat-list-item routerLink="productos/list_Categoria">Categorías</a>
+        </mat-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="custom-expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <!-- Agrega aquí tu icono para la columna izquierda -->
+                <i class="fa-solid fa-shop"></i>
+              </div>
+              <div class="col-auto">
+                <p class="dis">PUNTO DE VENTA</p>
+              </div>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <a mat-list-item routerLink="puntoVenta/list_Cotizacion">Funciono</a>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <!-- <span>MAFE MEDI</span>--->
+    </mat-toolbar>
+
+    <app-MyContain></app-MyContain>
+  </mat-sidenav-content>
+</mat-sidenav-container>
